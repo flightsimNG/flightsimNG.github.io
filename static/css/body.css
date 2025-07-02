@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Nohemi';
+    src: url('../fonts/Nohemi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #161A1B;
+    font-family: 'Nohemi', sans-serif;
+    margin: 0;
+}
