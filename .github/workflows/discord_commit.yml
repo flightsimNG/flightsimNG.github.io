@@ -3,17 +3,17 @@ name: Notify Discord on Push
 on:
   push:
     branches:
-      - main   # or your default branch
+      - main
 
 jobs:
   notify:
     runs-on: ubuntu-latest
-
-steps:
-  - name: Notify Discord
-    uses: Ilshidur/action-discord@v2
-    with:
-      webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-      message: |
-        New commit pushed by ${{ github.actor }} to ${{ github.repository }}.
-        Commit message: ${{ github.event.head_commit.message }}
+    steps:
+      - name: Send commit message to Discord
+        uses: tsickert/discord-webhook@v7.0.0
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          content: |
+            **New commit pushed by** `${{ github.actor }}`  
+            Repository: `${{ github.repository }}`  
+            Commit message: `${{ github.event.head_commit.message }}`
