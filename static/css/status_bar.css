@@ -1,0 +1,17 @@
+.status_bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(98, 125, 132, 0.15);
+  backdrop-filter: blur(8px);          
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(98, 125, 132, 0.3);
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
