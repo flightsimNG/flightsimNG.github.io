@@ -13,7 +13,30 @@ jobs:
         uses: tsickert/discord-webhook@v7.0.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          content: |
-            **New commit pushed by** `${{ github.actor }}`  
-            Repository: `${{ github.repository }}`  
-            Commit message: `${{ github.event.head_commit.message }}`
+          embeds: |
+            [
+              {
+                "title": "New Commit Pushed",
+                "color": 7506394,
+                "fields": [
+                  {
+                    "name": "Pusher",
+                    "value": "${{ github.actor }}",
+                    "inline": true
+                  },
+                  {
+                    "name": "Repository",
+                    "value": "${{ github.repository }}",
+                    "inline": true
+                  },
+                  {
+                    "name": "Commit Message",
+                    "value": "${{ github.event.head_commit.message }}"
+                  }
+                ],
+                "footer": {
+                  "text": "Automated by GitHub Actions"
+                },
+                "timestamp": "${{ github.event.head_commit.timestamp }}"
+              }
+            ]
