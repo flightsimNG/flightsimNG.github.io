@@ -1,0 +1,4 @@
+To set a status message, type the content into the JSON message.
+To remove a message, delete the JSON message content.
+
+The message should appear on the top of the fsNG website.

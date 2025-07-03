@@ -7,7 +7,11 @@ window.addEventListener('DOMContentLoaded', async () => {
         const statusBar = document.getElementById('status_bar');
         if (statusBar) {
             if (data.message && data.message.trim() !== '') {
-                statusBar.textContent = data.message;
+                if (data.target) {
+                    statusBar.innerHTML = `<a href="${data.target}"><p>${data.message}</p></a>`;
+                } else {
+                    statusBar.innerHTML = `<p>${data.message}</p>`;
+                }
                 statusBar.style.display = '';
             } else {
                 statusBar.remove();

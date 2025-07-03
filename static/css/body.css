@@ -9,4 +9,5 @@ body {
     background-color: #161A1B;
     font-family: 'Nohemi', sans-serif;
     margin: 0;
+    overflow-x: hidden;
 }
